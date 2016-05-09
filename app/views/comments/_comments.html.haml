@@ -1,0 +1,11 @@
+%h3 Comments
+- @comments.each do |comment|
+	.row
+		.col.s12.m12
+			.card.grey.lighten-4.hoverable
+				.card-content
+					%p= comment.content
+				.card-action.right-align
+					.chip
+						= image_tag(comment.try(:user).try(:image))
+						%strong= comment.try(:user).try(:name)

@@ -1,0 +1,60 @@
+.parallax-container.head
+	.container
+		.row.center-align.ptop
+			.col.s12.m4.l4
+				= image_tag('jostik.png',{:class => "responsive-img head-logo"})
+			.col.s12.m8.l8
+				%h2.white-text.head-text  Aprende las mejores tecnologías, con clases en vivo
+				= link_to "Cursos", courses_path, {:class => "btn around green darken-1"}
+				
+			
+
+.section.white
+	.row.container.center-align
+		.col.s12.m12.l12
+			.col.s12.m6.l6
+				%section
+					%figure
+						= image_tag('university.png',{:class => "responsive-img figure"})
+			.col.s12.m6.l6
+				%section
+					%p.center-align.figure-text Impartimos los cursos en tu universidad
+		
+		.col.s12.m12.l12
+			.col.s12.m6.l6
+				%section
+					%p.center-align.figure-text Resolvemos todas tus dudas
+			.col.s12.m6.l6
+				%section
+					%figure
+						= image_tag('kid.png',{:class => "responsive-img figure"})
+
+		.col.s12.m12.l12
+			.col.s12.m6.l6
+				%section
+					%figure
+						= image_tag('regalos.png',{:class => "responsive-img figure"})
+			.col.s12.m6.l6
+				%section
+					%p.center-align.figure-text Recibe regalos correspondientes a tus cursos
+
+.parallax-container.head
+	.container
+		.row.center-align
+
+%footer
+	.section.white
+		.row.container.center-align
+			.col.s12.m3.l3
+				= link_to "Cursos", courses_path, {:class => "red-text"}
+			.col.s12.m3.l3
+				= link_to "Eventos", events_path, {:class => "red-text"}
+			.col.s12.m3.l3
+				= link_to "Articulos", articles_path, {:class => "red-text"}
+			.col.s12.m3.l3
+				= link_to "Iniciar", user_session_path, {:class => "red-text"}
+			.col.s12.m12.l12
+				%p.ptop 
+				Made Whit 
+				= material_icon.favorite.style('color: red;') 
+				By NanoCode

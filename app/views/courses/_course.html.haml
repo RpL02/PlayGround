@@ -1,0 +1,10 @@
+.col.s12.m6.l6
+	%ul.collection.with-header
+		%li.collection-header.top{:style => "background-color: #{@category.color}; background-image: url(#{@category.cover.url()});"}
+			%h4.white-text 
+				= @category.name
+			- @category.courses.each do |course|
+				%li.collection-item.avatar
+					= image_tag course.cover.url(:mini)
+					%span.title 
+						= link_to course.name, course

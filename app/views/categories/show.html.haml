@@ -1,0 +1,5 @@
+= image_tag @category.cover.url(:thumb)
+- @category.courses.each do |course|
+	= course.name
+= @category.name
+= @category.color

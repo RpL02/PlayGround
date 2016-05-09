@@ -1,0 +1,24 @@
+.container
+	.card-panel.z-depth-3
+		.contenedor
+			= form_for(@course) do |f|
+				.input-field
+					= f.label :name
+					= f.text_field :name, autofocus: true
+				.input-field
+					= f.label :cover
+					= f.file_field :cover
+				.input-field
+					= f.label :poster
+					= f.file_field :poster
+				.input_field
+					= f.label :descripcion
+					= f.text_field :description, autofocus: true
+
+				- @categories.each do |category|
+					= check_box_tag "categories[]", category.id
+					= label_tag category.name
+					
+					
+				%br
+				= f.submit "Guardar", class: "btn"

@@ -1,0 +1,9 @@
+.container
+	.card-panel.z-depth-3
+		.contenedor
+			= form_for [@commentable, @comment] do |f|
+				.input-field
+					= f.label :content
+					= f.text_field :content, autofocus: true
+				.input-field
+					= f.submit "Guardar", class: "btn"

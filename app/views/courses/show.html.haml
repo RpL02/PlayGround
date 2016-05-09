@@ -1,0 +1,13 @@
+.parallax-container
+	.parallax
+		= image_tag @course.poster.url(:medium)
+
+.container.course
+	.card-panel.z-depth-3
+		.contenedor
+			.row
+				.col.s12.m6
+					= image_tag @course.cover.url(:thumb)
+				.col.s12.m6
+					%h1{:class => "left-align"}= @course.name
+					%p= @course.description

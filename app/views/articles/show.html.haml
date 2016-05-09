@@ -1,0 +1,15 @@
+.parallax-container
+	.parallax
+		= image_tag(@article.cover.url('medium'))
+.container.course
+	.card-panel.z-depth-3
+		.contenedor
+			.row
+				%h1= @article.title
+				%p= @article.body
+				
+				= render partial: "comments/comments"
+
+				= render partial: "comments/form"				
+				
+				

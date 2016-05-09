@@ -1,0 +1,12 @@
+.col.s12.m6.l4
+	.card.small.hoverable
+		.card-image
+			= image_tag(article.cover.url(:medium))
+			.card-title.grey-text.text-darken-4 
+				= link_to article.title, article
+		.card-content
+			.card-action.right-align
+				- unless article.user.nil?
+					.chip
+						= image_tag(article.user.image)
+						= article.user.name

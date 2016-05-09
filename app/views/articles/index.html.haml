@@ -1,0 +1,9 @@
+.container
+	.row
+		= render @articles
+	
+.fixed-action-btn
+	.btn-floating.btn-large.red
+		= link_to new_article_path do
+			= material_icon.add
+

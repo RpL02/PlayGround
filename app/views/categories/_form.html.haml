@@ -1,0 +1,15 @@
+.container
+	.card-panel.z-depth-3
+		.contenedor
+			= form_for(@category) do |f|
+				.input-field
+					= f.label :nombre
+					= f.text_field :name, autofocus: true
+				.input-field
+					= f.label :cover
+					= f.file_field :cover
+				.input-field
+					= f.label :color
+					= f.color_field :color
+				.input-field
+					= f.submit "Guardar", class: "btn"

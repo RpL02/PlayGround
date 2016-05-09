@@ -1,0 +1,14 @@
+.container
+	.card-panel.z-depth-3
+		.contenedor
+			= form_for(@article) do |f|
+				= f.label :title
+				= f.text_field :title, autofocus: true
+
+				= f.label :body
+				= f.text_field :body, autofocus: true
+
+				= f.label :cover
+				= f.file_field :cover
+
+				= f.submit "Guardar", class: "btn"

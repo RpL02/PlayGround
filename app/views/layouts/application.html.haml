@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PlayGround
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    
+    %nav
+      .nav-wrapper.red.accent-2
+        = image_tag('logo.png', {:class => "logo brand-logo"})
+    
+        %ul{:class => "dropdown-content",:id => "dropdown1"}
+          %li 
+            = link_to "Salir", destroy_user_session_path, method: :delete
+
+        %ul.right.hide-on-med-and-down
+          %li
+            = link_to "Home", root_path
+          %li
+            = link_to "Articulos", articles_path
+          %li
+            = link_to "Cursos", courses_path
+          %li
+            = link_to "Eventos", events_path
+          %li
+            = link_to "Categorias", categories_path
+            - if user_signed_in?
+              %li
+                %a{:class =>"dropdown-button","data-activates" => "dropdown1", href: "#"}
+                  = image_tag(current_user.image, :class => "circle")
+            - else
+              %li
+                = link_to "Iniciar", new_user_session_path
+
+
+            
+    - if notice
+      %p.notice= notice
+
+    - if notice
+      %p.alert= alert
+
+    = yield
